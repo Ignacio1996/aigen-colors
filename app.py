@@ -30,11 +30,9 @@ def get_colors(msg):
 
 @app.route("/palette", methods=["POST"])
 def prompt_to_palette():
-    print("sarples")
-    query = app.logger.info(request.form.get("query"))
+    query = request.form.get("query")
     colors = get_colors(query)
-    return colors
-
+    return {"colors": colors}
 
 
 @app.route("/")
