@@ -12,7 +12,7 @@ openai.api_key = config["OPENAI_KEY"]
 
 def get_colors(msg):
     prompt = f"""
-    Q: oncvert the following verbal description of a color palette into a list of colors: sage, nature, earth
+    Q: Convert the following verbal description of a color palette into a list of colors: sage, nature, earth
     A: ["#EDF1D6", "#609966", "#40513B"]
 
     Desired Format: a JSON array of hexadecimal color codes
