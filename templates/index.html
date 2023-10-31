@@ -7,5 +7,35 @@
   </head>
   <body>
     <h1>Hello!</h1>
+    <form id="form">
+      <input type="text" placeholder="Add colors you want" />
+      <button>Submit</button>
+      <div>is this even working?</div>
+    </form>
+    <script>
+      // alert("Hello");
+      const form = document.getElementById("form"); // Removed the '#' symbol
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        console.log("index.html 18 | form", form.elements[0].value);
+        const query = form.elements[0].value;
+        fetch("/palette", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({ query: query }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("index.html 29 | data", data);
+          })
+          .catch((error) => {
+            console.log("index.html 30 | ", "error with request", error);
+
+            const colors = data.colors;
+          });
+      });
+    </script>
   </body>
 </html>
