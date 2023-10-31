@@ -5,12 +5,7 @@ app = Flask(__name__, template_folder="templates")
 
 @app.route("/")
 def index():
-    return "HEllo there from Flask"
-
-@app.route("/dog")
-def dog():
-    hello = 'woof woof'
-    return hello
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
