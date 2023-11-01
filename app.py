@@ -15,6 +15,9 @@ def get_colors(msg):
     Q: Convert the following verbal description of a color palette into a list of colors: sage, nature, earth
     A: ["#EDF1D6", "#609966", "#40513B"]
 
+    Q: 4 Pastel colors
+    A: ["#E6AFA5", "#CFFFE9", "#F6B26B", "#B4EEB4"]
+
     Desired Format: a JSON array of hexadecimal color codes
 
     Q: Convert the following verbal description of a color palette into a list of colors: {msg}
