@@ -6,8 +6,6 @@
     <title>Color Palette Generator</title>
 
     <style>
-      h1 {
-      }
       .container {
         width: 100%;
         height: 100vh;
@@ -22,12 +20,12 @@
     </style>
   </head>
   <body>
-    <div class="container"></div>
     <form id="form">
       <input type="text" placeholder="Add colors you want" />
       <button>Submit</button>
       <div>is this even working?</div>
     </form>
+    <div class="container"></div>
     <script>
       // alert("Hello");
       const form = document.getElementById("form"); // Removed the '#' symbol
@@ -54,9 +52,15 @@
               div.style.flex = 1;
               div.style.height = "100vh";
 
-              // const span = document.createElement("span");
-              // span.innerText = color;
-              // div.appendChild(span);
+              div.addEventListener("click", () => {
+                navigator.clipboard.writeText(color);
+              });
+
+              const span = document.createElement("span");
+              span.innerText = color;
+              span.style.margin = "0 auto";
+              span.style.width = "100%";
+              div.appendChild(span);
               container.appendChild(div);
             }
           })
