@@ -6,7 +6,9 @@ import json
 
 config = dotenv_values(".env")
 
-app = Flask(__name__, template_folder="templates")
+app = Flask(
+    __name__, template_folder="templates", static_url_path="", static_folder="static"
+)
 openai.api_key = config["OPENAI_KEY"]
 
 
